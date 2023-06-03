@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="/static/css/shop.css"/>
+<script type="module" src="static/js/shopscript.js"></script>
+<script id="product-template" type="text/x-handlebars-template">
+  <div class="row p-2 bg-white border rounded mt-2">
+    <div class="col-md-3 mt-1 fill"><img class="img-fluid img-responsive w-100 rounded product-image" src="{{#if product_image}}{{product_image}}{{else}}/static/assets/noimg.png{{/if}}"></div>
+    <div class="col-md-6 mt-1">
+      <h5>{{product_name}}</h5>
+      <div class="d-flex flex-row">
+        {{#if product_rating}}
+          <div class="ratings mr-2">
+            {{#starsshop product_rating}}{{/starsshop}}
+          </div>
+        {{/if}}
+      </div>
+      <p class="text-justify text-truncate para mb-0">{{product_desc}}<br><br></p>
+    </div>
+    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+      <div class="d-flex flex-row align-items-center">
+        <h4 class="mr-1">{{product_price}}zł</h4>
+        {{#if onSale}}
+          <span class="strike-text">{{before_sale_price}}zł</span>
+        {{/if}}
+      </div>
+      <h6 class="text-success">Darmowa dostawa</h6>
+      <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Szczegóły</button></div>
+    </div>
+  </div>
+</script>
+
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center row">
+    <div class="col-md-10" id="shopProducts">
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

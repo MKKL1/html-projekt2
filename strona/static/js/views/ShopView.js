@@ -1,16 +1,17 @@
 import AbstractView from "./AbstractView.js";
+import {onShopStart} from "../shopscript.js";
 
 export default class extends AbstractView {
     constructor() {
         super();
-        this.setTitle("Home");
+        this.setTitle("Shop");
     }
 
     getHtml() {
-        return fetch("/static/home.html");
+        return fetch("/static/shop.html");
     }
 
     onStart() {
-        onHomeStart();
+        onShopStart();
     }
 }

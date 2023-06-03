@@ -2,10 +2,13 @@
 .card {
     box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 }
-.avatar.sm {
+.thumbnail {
     width: 2.25rem;
     height: 2.25rem;
     font-size: .818125rem;
+}
+.dropdown-red {
+    color: #be0a0a;
 }
 
 .table-nowrap .table td, .table-nowrap .table th {

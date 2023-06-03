@@ -13,22 +13,22 @@
       <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
       {{/if}}
       <!-- Product image-->
-      <img class="card-img-top" src="{{#if image_path}}{{image_path}}{{else}}/static/assets/noimg.png{{/if}}" alt="..." />
+      <img class="card-img-top" src="{{#if product_image}}{{product_image}}{{else}}/static/assets/noimg.png{{/if}}" alt="..." />
       <!-- Product details-->
       <div class="card-body p-4">
         <div class="text-center">
           <!-- Product name-->
           <h5 class="fw-bolder">{{product_name}}</h5>
-          {{#if rating}}
+          {{#if product_rating}}
           <div class="d-flex justify-content-center small text-warning mb-2">
-            {{#stars rating}}{{/stars}}
+            {{#stars product_rating}}{{/stars}}
           </div>
           {{/if}}
           <!-- Product price-->
           {{#if onSale}}
-          <span class="text-muted text-decoration-line-through">${{standard_price}}</span>
+          <span class="text-muted text-decoration-line-through">{{before_sale_price}}zł</span>
           {{/if}}
-          ${{product_price}}
+          ${{product_price}}zł
         </div>
       </div>
       <!-- Product actions-->

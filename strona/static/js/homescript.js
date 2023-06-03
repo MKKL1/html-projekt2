@@ -1,11 +1,33 @@
 // import {Handlebars} from "./lib/handlebars.js";
+import {ItemStorage} from "./ItemStorage.js";
+
+let itemstorage = null;
 
 export function onHomeStart() {
+    itemstorage = new ItemStorage();
     fillItems();
 }
 
+function shuffle(array) {
+    let i = array.length,
+        j = 0,
+        temp;
+
+    while (i--) {
+
+        j = Math.floor(Math.random() * (i+1));
+
+        // swap randomly chosen element with current element
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+
+    }
+
+    return array;
+}
+
 function fillItems() {
-    console.log("adc");
 
     const source = document.getElementById("entry-template").innerHTML;
     Handlebars.registerHelper('stars', function(rating) {
@@ -13,13 +35,13 @@ function fillItems() {
         return new Handlebars.SafeString(stars);
     });
     const template = Handlebars.compile(source);
-    const context = {
-        "image_path": "https://i.stack.imgur.com/X6Fiw.png",
-        "product_name": "Dupa",
-        "product_price": "20.23",
-        "standard_price": "50.50",
-        "onSale": true
-    };
-    const html    = template(context);
-    $("#homeProducts").append(html);
+    console.log(itemstorage.items);
+    console.log(Object.keys(itemstorage.items));
+    const products = shuffle(Object.keys(itemstorage.items))
+    console.log(products);
+    for(let i = 0; i < 10 && i < products.length; i++) {
+
+        $("#homeProducts").append(template(itemstorage.items[products[i]]));
+    }
+
 }
