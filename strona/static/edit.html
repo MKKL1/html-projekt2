@@ -6,7 +6,6 @@
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="/static/css/list.css"/>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <script type="module" src="static/js/editscript.js"></script>
 <script id="listproduct-template" type="text/x-handlebars-template">
   <tr class="align-middle">
@@ -42,40 +41,45 @@
         <button type="button" class="btn-close" onclick="closeModal()" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="product_add_form">
-          <div class="form-outline mb-4">
-            <label class="form-label" for="formProductName">Nazwa</label>
-            <input type="text" id="formProductName" class="form-control" required />
+
+        <!--Formularz dodawania przedmiotów-->
+        <form method="post" id="product_add_form" class="form">
+
+          <div class="form-control">
+            <label for="formProductName">Nazwa*</label>
+            <input type="text" name="product_name" placeholder="Nazwa przedmiotu" id="formProductName" />
+            <i class="bi bi-check-circle"></i>
+            <i class="bi bi-exclamation-circle"></i>
+            <small>Error message</small>
           </div>
 
-          <div class="form-group">
-            <div class="col-md-6 form-outline mb-4">
-              <label class="form-label" for="formProductDesc">Opis</label>
-              <textarea class="form-control" id="formProductDesc" rows="3" placeholder="Opis"></textarea>
-            </div>
+          <div class="form-control">
+            <label for="formProductPrice">Cena*</label>
+            <input step="0.01" type="number" name="product_price" placeholder="19.99" id="formProductPrice" />
+            <i class="bi bi-check-circle"></i>
+            <i class="bi bi-exclamation-circle"></i>
+            <small>Error message</small>
           </div>
 
-          <div class="form-outline mb-4">
-            <label for="formProductPrice">Cena</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupPrepend">zł</span>
-              </div>
-              <input type="text" class="form-control" id="formProductPrice" placeholder="Cena" aria-describedby="inputGroupPrepend" required>
-            </div>
+          <div class="form-control">
+            <label for="formProductDesc">Opis</label>
+            <textarea type="text" name="product_desc" placeholder="Opis przedmiotu" id="formProductDesc"></textarea>
           </div>
 
-
-          <div class="form-outline mb-4">
-            <label class="form-label" for="formProductImage">Zdjęcie</label>
-            <input type="file" id="formProductImage" class="form-control" />
+          <div class="form-control">
+            <label for="formProductImage">Zdjęcie</label>
+            <input type="text" name="product_image" placeholder="Ścieżka do pliku na serwerze..." id="formProductImage" />
+            <i class="bi bi-check-circle"></i>
+            <i class="bi bi-exclamation-circle"></i>
+            <small>Error message</small>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Zamknij</button>
+            <button type="submit" class="btn btn-primary">Zapisz przedmiot</button>
           </div>
         </form>
+
       </div>
 
     </div>
