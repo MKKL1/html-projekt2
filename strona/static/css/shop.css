@@ -35,14 +35,28 @@ h5{
 
 .border-left{border-left:1px solid #dee2e6!important}
 
-.fill {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.fill img {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%
-}
+
+/*.fill {*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    overflow: hidden;*/
+/*    position: relative;*/
+/*    background: rgba(0, 0, 0, 0.5);*/
+/*    margin: 10px 0;*/
+/*}*/
+/*.fill img {*/
+/*    width: 100%;*/
+/*    min-height: 100%;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%);*/
+/*}*/
+

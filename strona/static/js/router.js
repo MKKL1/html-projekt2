@@ -1,12 +1,8 @@
 import HomeView from "./views/HomeView.js";
 import EditView from "./views/EditView.js";
 import ShopView from "./views/ShopView.js";
+import ProductView from "./views/ProductView.js";
 
-// const routes = [
-//     { path: "/", view: HomeView },
-//     { path: "/edit", view: EditView },
-//     { path: "/shop", view: ShopView }
-// ];
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
 const getParams = match => {
@@ -28,7 +24,8 @@ const router = async () => {
         { path: "/", view: HomeView },
         { path: "/shop", view: ShopView },
         { path: "/shop/:page", view: ShopView },
-        { path: "/edit", view: EditView }
+        { path: "/edit", view: EditView },
+        { path: "/product/:id", view: ProductView }
     ];
 
     // Test each route for potential match

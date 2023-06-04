@@ -35,13 +35,11 @@ function fillItems() {
         return new Handlebars.SafeString(stars);
     });
     const template = Handlebars.compile(source);
-    console.log(itemstorage.items);
-    console.log(Object.keys(itemstorage.items));
     const products = shuffle(Object.keys(itemstorage.items))
-    console.log(products);
-    for(let i = 0; i < 10 && i < products.length; i++) {
-
-        $("#homeProducts").append(template(itemstorage.items[products[i]]));
+    for(let i = 0; i < 8 && i < products.length; i++) {
+        let data = itemstorage.items[products[i]];
+        data['id'] = products[i];
+        $("#homeProducts").append(template(data));
     }
 
 }

@@ -152,7 +152,9 @@ function resetForm() {
         $(this).attr('value', '');
     });
     $('#product_add_form textarea').each(function () {
+        console.log('clear textarea');
         $(this).html('');
+        $(this).attr('value', '');
     });
 }
 
@@ -162,12 +164,12 @@ function removeItem(uuid) {
 }
 
 function editItem(uuid) {
-    resetForm()
+    resetForm();
 
     edit = true;
     currentEditedUUID = uuid;
 
-    $('addItemModalLabel').html('Edytuj przedmiot przedmiot');
+    $('#addItemModalLabel').html('Edytuj przedmiot');
 
     const product = itemstorage.getItem(uuid);
     $('#formProductName').attr('value', product.product_name);
@@ -189,7 +191,7 @@ function editItem(uuid) {
 function showAddItem() {
     resetForm();
 
-    $('addItemModalLabel').html('Dodaj przedmiot');
+    $('#addItemModalLabel').html('Dodaj przedmiot');
     edit = false;
     $('#addItemModal').modal('show');
 }

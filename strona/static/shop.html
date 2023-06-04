@@ -9,7 +9,9 @@
 <script type="module" src="static/js/shopscript.js"></script>
 <script id="product-template" type="text/x-handlebars-template">
   <div class="row p-2 bg-white border rounded mt-2">
-    <div class="col-md-3 mt-1 fill"><img class="img-fluid img-responsive w-100 rounded product-image" src="{{#if product_image}}{{product_image}}{{else}}/static/assets/noimg.png{{/if}}"></div>
+    <div class="col-md-3 mt-1 fill">
+      <img class="img-fluid img-responsive rounded product-image" src="{{#if product_image}}{{product_image}}{{else}}/static/assets/noimg.png{{/if}}" alt="Product">
+    </div>
     <div class="col-md-6 mt-1">
       <h5>{{product_name}}</h5>
       <div class="d-flex flex-row">
@@ -19,7 +21,7 @@
           </div>
         {{/if}}
       </div>
-      <p class="text-justify text-truncate para mb-0">{{product_desc}}<br><br></p>
+      <p class="para mb-0 description">{{product_desc}}<br><br></p>
     </div>
     <div class="align-items-center align-content-center col-md-3 border-left mt-1">
       <div class="d-flex flex-row align-items-center">
@@ -29,7 +31,7 @@
         {{/if}}
       </div>
       <h6 class="text-success">Darmowa dostawa</h6>
-      <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Szczegóły</button></div>
+      <div class="d-flex flex-column mt-4"><a class="btn btn-primary btn-sm" type="button" href="/product/{{id}}">Szczegóły</a></div>
     </div>
   </div>
 </script>
