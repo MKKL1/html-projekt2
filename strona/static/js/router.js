@@ -2,28 +2,67 @@ import HomeView from "./views/HomeView.js";
 import EditView from "./views/EditView.js";
 import ShopView from "./views/ShopView.js";
 
-const route = (event) => {
-    event = event || window.event;
-    event.preventDefault();
-    window.history.pushState({}, "", event.target.href);
-    handleLocation();
-}
+// const routes = [
+//     { path: "/", view: HomeView },
+//     { path: "/edit", view: EditView },
+//     { path: "/shop", view: ShopView }
+// ];
+const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
-const routes = [
-    { path: "/", view: HomeView },
-    { path: "/edit", view: EditView },
-    { path: "/shop", view: ShopView }
-];
+const getParams = match => {
+    const values = match.result.slice(1);
+    const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
 
-const handleLocation = async () => {
-    const path = window.location.pathname;
-    const view = routes.find(x => x.path === path).view
-    const viewobject = new view()
-    document.getElementById("content").innerHTML = await viewobject.getHtml().then(resp => resp.text());
-    await viewobject.onStart();
-}
+    return Object.fromEntries(keys.map((key, i) => {
+        return [key, values[i]];
+    }));
+};
 
-window.onpopstate = handleLocation;
-window.route = route;
+const navigateTo = url => {
+    history.pushState(null, null, url);
+    router();
+};
 
-handleLocation();
+const router = async () => {
+    const routes = [
+        { path: "/", view: HomeView },
+        { path: "/shop", view: ShopView },
+        { path: "/shop/:page", view: ShopView },
+        { path: "/edit", view: EditView }
+    ];
+
+    // Test each route for potential match
+    const potentialMatches = routes.map(route => {
+        return {
+            route: route,
+            result: location.pathname.match(pathToRegex(route.path))
+        };
+    });
+
+    let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
+
+    if (!match) {
+        match = {
+            route: routes[0],
+            result: [location.pathname]
+        };
+    }
+
+    const view = new match.route.view(getParams(match));
+
+    document.querySelector("#content").innerHTML = await view.getHtml().then(resp => resp.text());
+    await view.onStart();
+};
+
+window.addEventListener("popstate", router);
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", e => {
+        if (e.target.matches("[data-link]")) {
+            e.preventDefault();
+            navigateTo(e.target.href);
+        }
+    });
+
+    router();
+});

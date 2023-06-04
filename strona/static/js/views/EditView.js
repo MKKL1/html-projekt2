@@ -2,8 +2,8 @@ import AbstractView from "./AbstractView.js";
 import {onEditStart} from "../editscript.js";
 
 export default class extends AbstractView {
-    constructor() {
-        super();
+    constructor(params) {
+        super(params);
         this.setTitle("Edit items");
     }
 

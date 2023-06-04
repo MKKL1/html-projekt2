@@ -2,8 +2,9 @@ import AbstractView from "./AbstractView.js";
 import {onShopStart} from "../shopscript.js";
 
 export default class extends AbstractView {
-    constructor() {
-        super();
+    constructor(params) {
+        super(params);
+        this.page = params.page || 0;
         this.setTitle("Shop");
     }
 
@@ -12,6 +13,6 @@ export default class extends AbstractView {
     }
 
     onStart() {
-        onShopStart();
+        onShopStart(this.page);
     }
 }
