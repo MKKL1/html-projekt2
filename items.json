@@ -1,0 +1,134 @@
+{
+  "3eaf3c5e-84a2-4743-a0a8-9a8b8f456e19": {
+    "product_name": "Zefirowa Pasja",
+    "product_desc": "Przedstawiamy Ci \"Zefirową Pasje\" - dzbanek, który wprawi Cię w zachwyt swoim urokiem i unikalnym stylem. Ten dzbanek to kwintesencja piękna i elegancji, połączona z praktycznością i funkcjonalnością.\n\nZaprojektowany z dbałością o detale, \"Kwiatowa Fantazja\" zachwyca swoim delikatnym wzornictwem, inspirowanym kwiatowymi motywami. Jego wyjątkowa forma sprawia, że stanowi prawdziwą ozdobę każdego wnętrza. Bez względu na to, czy umieścisz go na stole w jadalni, na tarasie czy w salonie, dzbanek ten przyciągnie spojrzenia i stworzy wyjątkową atmosferę.",
+    "product_price": 18.99,
+    "before_sale_price": 19.99,
+    "product_image": "/static/assets/przedmioty/M2-02_th.jpg",
+    "onSale": true,
+    "product_rating": 4,
+    "id": "3eaf3c5e-84a2-4743-a0a8-9a8b8f456e19"
+  },
+  "d689a119-8dba-407e-a641-3b507b5d1408": {
+    "product_name": "Kolorowa Harmonia",
+    "product_desc": "Nasza \"Kolorwa Harmonia\" to nie tylko piękno zewnętrzne. Wykonany z wysokiej jakości materiałów, zapewnia trwałość i długotrwałe użytkowanie. Posiada praktyczny uchwyt oraz wygodny wylewacz, umożliwiający łatwe nalewanie napojów bez rozlewania.",
+    "product_price": 29.99,
+    "product_image": "/static/assets/przedmioty/M2-03_th.jpg",
+    "onSale": false,
+    "product_rating": 5,
+    "id": "d689a119-8dba-407e-a641-3b507b5d1408"
+  },
+  "67380872-2864-40b1-8783-ef39eecd7196": {
+    "product_name": "Kwiatowa Fantazja",
+    "product_desc": "Dzięki temu dzbankowi będziesz mógł cieszyć się ulubionymi napojami w stylowy i wyrafinowany sposób. Zbieraj chwile relaksu, serwując swoim bliskim pyszną herbatę, świeżo wyciśnięty sok czy orzeźwiającą lemoniadę. \"Kwiatowa Fantazja\" doda magii każdemu spotkaniu i sprawi, że każdy łyk będzie wyjątkowy.",
+    "product_price": 13,
+    "before_sale_price": 15,
+    "product_image": "/static/assets/przedmioty/M2-08_th.jpg",
+    "onSale": true,
+    "product_rating": 3,
+    "id": "67380872-2864-40b1-8783-ef39eecd7196"
+  },
+  "e4d21024-7c87-4cb5-aa74-9fc02de2a8b8": {
+    "product_name": "Elegancki Akcent",
+    "product_price": 25.5,
+    "before_sale_price": 27.95,
+    "product_image": "/static/assets/przedmioty/M2-09_th.jpg",
+    "onSale": true,
+    "product_rating": 4,
+    "id": "e4d21024-7c87-4cb5-aa74-9fc02de2a8b8"
+  },
+  "03a3f392-10d4-4592-a1eb-99ec94658ad9": {
+    "product_name": "Szklana Cudowność",
+    "product_desc": "Zamów już dziś nasz dzbanek \"Szklana Cudowność\" i odkryj nowy wymiar przyjemności z picia ulubionych napojów. Przekształć zwykłe chwile w niezapomniane doznania, otulając się w piękno i wyrafinowanie tego niezwykłego dzbanka.",
+    "product_price": 48.8,
+    "before_sale_price": 49.9,
+    "product_image": "/static/assets/przedmioty/M2-10_th.jpg",
+    "onSale": true,
+    "product_rating": 4,
+    "id": "03a3f392-10d4-4592-a1eb-99ec94658ad9"
+  },
+  "ff03d0fd-a4bf-4d2a-bacd-681ffef53c9a": {
+    "product_name": "Porcelanowy Urok",
+    "product_desc": "Dzbanek \"Porcelanowy Urok\" emanuje wyrafinowanym urokiem, który przyciąga spojrzenia i dodaje elegancji każdemu wnętrzu. Jego minimalistyczny design w połączeniu z subtelnymi detalami nadaje mu nowoczesny i ponadczasowy charakter. Bez względu na okazję czy miejsce, dzbanek ten doskonale wpisuje się w różnorodne aranżacje.",
+    "product_price": 39.9,
+    "product_image": "/static/assets/przedmioty/M2-11_th.jpg",
+    "onSale": false,
+    "product_rating": 4,
+    "id": "ff03d0fd-a4bf-4d2a-bacd-681ffef53c9a"
+  },
+  "c76e0e63-f039-40df-95bf-04f8bd453ae9": {
+    "product_name": "Vintage Radość",
+    "product_price": 39.9,
+    "product_image": "/static/assets/przedmioty/M2-12_th.jpg",
+    "onSale": false,
+    "product_rating": 5,
+    "id": "c76e0e63-f039-40df-95bf-04f8bd453ae9"
+  },
+  "4f8b7e78-baee-46f4-8438-91c2fefcd936": {
+    "product_name": "Morskie Przeżycie",
+    "product_price": 59.9,
+    "product_image": "/static/assets/przedmioty/M2-13_th.jpg",
+    "onSale": false,
+    "product_rating": 5,
+    "id": "4f8b7e78-baee-46f4-8438-91c2fefcd936"
+  },
+  "7a64f283-94af-4f40-a603-fbe5deb0b719": {
+    "product_name": "Zenowa Delikatność",
+    "product_price": 29.9,
+    "before_sale_price": 59.55,
+    "product_image": "/static/assets/przedmioty/M2-14_th.jpg",
+    "onSale": true,
+    "product_rating": 5,
+    "id": "7a64f283-94af-4f40-a603-fbe5deb0b719"
+  },
+  "aea434ec-1382-4d10-874d-cba5c9bbe77e": {
+    "product_name": "Świeży Błysk",
+    "product_desc": "Wykonany z wysokiej jakości szkła, \"Świeży Błysk\" zapewnia trwałość i klarowność, co pozwala cieszyć się pięknym widokiem świeżo zaparzonej herbaty, aromatycznego naparu czy kolorowej lemoniady. Dzięki swojej pojemności i ergonomicznie zaprojektowanemu uchwytowi, łatwo go trzymać i bezproblemowo nalewać napoje do filiżanek czy szklanek.",
+    "product_price": 99.55,
+    "product_image": "/static/assets/przedmioty/M2-15_th.jpg",
+    "onSale": false,
+    "product_rating": 4
+  },
+  "316d2719-512b-4afb-9ff7-d90c1b11a2c2": {
+    "product_name": "Klasyczny Czaruś",
+    "product_price": 45.55,
+    "product_image": "/static/assets/przedmioty/M2-16_th.jpg",
+    "onSale": false,
+    "product_rating": 4,
+    "id": "316d2719-512b-4afb-9ff7-d90c1b11a2c2"
+  },
+  "824bea03-a8db-4ce8-95b5-4d2f8215846b": {
+    "product_name": "Majestatyczna Kaskada",
+    "product_price": 60,
+    "product_image": "/static/assets/przedmioty/M2-17_th.jpg",
+    "onSale": false,
+    "product_rating": 4,
+    "id": "824bea03-a8db-4ce8-95b5-4d2f8215846b"
+  },
+  "824ff841-0af7-46e5-9d69-2062ebaa2d28": {
+    "product_name": "Radosna Oaza",
+    "product_price": 62.89,
+    "before_sale_price": 72.89,
+    "product_image": "/static/assets/przedmioty/M2-18_th.jpg",
+    "onSale": true,
+    "product_rating": 5,
+    "id": "824ff841-0af7-46e5-9d69-2062ebaa2d28"
+  },
+  "822ba44b-df09-43e6-9eac-ad081521c777": {
+    "product_name": "Prosta Elegancja",
+    "product_price": 42.89,
+    "product_image": "/static/assets/przedmioty/M2-19_th.jpg",
+    "onSale": false,
+    "product_rating": 5,
+    "id": "822ba44b-df09-43e6-9eac-ad081521c777"
+  },
+  "c7a7df02-3e1c-44ab-946f-9e37871bbe02": {
+    "product_name": "Przezroczysta Magia",
+    "product_price": 49,
+    "before_sale_price": 54,
+    "product_image": "/static/assets/przedmioty/M2-20_th.jpg",
+    "onSale": true,
+    "product_rating": 5,
+    "id": "c7a7df02-3e1c-44ab-946f-9e37871bbe02"
+  }
+}

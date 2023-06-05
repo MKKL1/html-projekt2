@@ -3,8 +3,11 @@ import EditView from "./views/EditView.js";
 import ShopView from "./views/ShopView.js";
 import ProductView from "./views/ProductView.js";
 
+//Zamienia ścieżke z routes do odpowiedniego regexa, dla /shop:page /^\/shop\/(.+)$/, natomiast /shop /^\/shop$/
+//Regex uzywany do wyszkania parametrów w linku
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
+//Czyta wszystkie parametry w linku i zwraca je jako obiekt
 const getParams = match => {
     const values = match.result.slice(1);
     const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
@@ -38,11 +41,10 @@ const router = async () => {
 
     let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
 
+    //Jeżeli nie znajdzie odpowiedniego linku to przechodzi na stronę 404
     if (!match) {
-        match = {
-            route: routes[0],
-            result: [location.pathname]
-        };
+        document.querySelector('#content').innerHTML = await fetch('/static/404.html').then(resp => resp.text());
+        return;
     }
 
     const view = new match.route.view(getParams(match));
@@ -51,8 +53,10 @@ const router = async () => {
     await view.onStart();
 };
 
+//Zamiana przejścia na odpowiednią stronę po wpisaniu linku
 window.addEventListener("popstate", router);
 
+//Przejście na odpowiednią stronę po wciśnięciu elementu na stronie
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {

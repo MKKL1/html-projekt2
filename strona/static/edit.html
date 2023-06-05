@@ -18,7 +18,7 @@
       </div>
     </td>
     <td>{{id}}</td>
-    <td><span class="d-inline-block align-middle">{{distanceFixed product_price}} zł</span></td>
+    <td><span class="d-inline-block align-middle">{{product_price}} zł</span></td>
     <td class="text-end">
       <div class="drodown">
         <a data-bs-toggle="dropdown" href="#" class="btn p-1" aria-expanded="false">
@@ -50,7 +50,7 @@
       <div class="modal-body">
 
         <!--Formularz dodawania przedmiotów-->
-        <form method="post" id="product_add_form" class="form">
+        <form method="post" id="product_add_form" class="form" novalidate>
 
           <div class="form-control">
             <label for="formProductName">Nazwa*</label>
@@ -62,7 +62,7 @@
 
           <div class="form-control">
             <label for="formProductPrice">Cena*</label>
-            <input step="0.01" type="number" name="product_price" placeholder="19.99" id="formProductPrice" />
+            <input type="text" name="product_price" placeholder="19.99" id="formProductPrice" />
             <i class="bi bi-check-circle"></i>
             <i class="bi bi-exclamation-circle"></i>
             <small>Error message</small>
@@ -70,7 +70,7 @@
 
           <div class="form-control">
             <label for="formProductSale">Przecena</label>
-            <input step="0.01" type="number" name="product_sale_price" placeholder="19.99" id="formProductSale" />
+            <input type="text" name="product_sale_price" placeholder="19.99" id="formProductSale" />
             <i class="bi bi-check-circle"></i>
             <i class="bi bi-exclamation-circle"></i>
             <small>Error message</small>
@@ -78,12 +78,12 @@
 
           <div class="form-control">
             <label for="formProductDesc">Opis</label>
-            <textarea type="text" name="product_desc" placeholder="Opis przedmiotu" id="formProductDesc"></textarea>
+            <textarea name="product_desc" placeholder="Opis przedmiotu" id="formProductDesc"></textarea>
           </div>
 
           <div class="form-control">
             <label for="formProductRating">(Ocena)</label>
-            <input step="1" min="1" max="5" type="number" name="product_rating" placeholder="4.5" id="formProductRating" />
+            <input  type="text" name="product_rating" placeholder="4" id="formProductRating" />
             <i class="bi bi-check-circle"></i>
             <i class="bi bi-exclamation-circle"></i>
             <small>Error message</small>
@@ -91,7 +91,7 @@
 
           <div class="form-control">
             <label for="formProductImage">Zdjęcie</label>
-            <input type="text" name="product_image" placeholder="Ścieżka do pliku na serwerze..." id="formProductImage" />
+            <input type="text" name="product_image" placeholder="Ścieżka do pliku..." id="formProductImage" />
             <i class="bi bi-check-circle"></i>
             <i class="bi bi-exclamation-circle"></i>
             <small>Error message</small>

@@ -11,13 +11,11 @@ export function onEditStart() {
 
     itemstorage = new ItemStorage();
 
-    Handlebars.registerHelper('distanceFixed', function(distance) {
-        return distance.toFixed(2);
-    });
-
     $('#product_add_form').on('submit', function(event) {
         event.preventDefault();
+        console.log("here");
         if(!checkInputs()) return false;
+        console.log("here2");
 
         let data = {}
         const formdata = new FormData(event.target);
@@ -27,11 +25,11 @@ export function onEditStart() {
             przedmiot.product_desc = formdata.get('product_desc');
 
         if(formdata.get('product_sale_price') !== '') {
-            przedmiot.before_sale_price = parseFloat(formdata.get('product_price'));
-            przedmiot.product_price = parseFloat(formdata.get('product_sale_price'));
+            przedmiot.before_sale_price = parseFloat(formdata.get('product_price')).toFixed(2);
+            przedmiot.product_price = parseFloat(formdata.get('product_sale_price')).toFixed(2);
             przedmiot.onSale = true;
         } else {
-            przedmiot.product_price = parseFloat(formdata.get('product_price'));
+            przedmiot.product_price = parseFloat(formdata.get('product_price')).toFixed(2);
             przedmiot.onSale = false;
         }
 
@@ -64,10 +62,10 @@ function checkInputs() {
     const productRatingInput = document.getElementById('formProductRating');
 
     const productNameValue = productNameInput.value.trim();
-    const productPriceValue = productPriceInput.value.trim();
+    const productPriceValue = productPriceInput.value;
     const productImageValue = productImageInput.value.trim();
-    const productSaleValue = productSaleInput.value.trim();
-    const productRatingValue = productRatingInput.value.trim();
+    const productSaleValue = productSaleInput.value;
+    const productRatingValue = productRatingInput.value;
 
     if(productNameValue === '') {
         setErrorFor(productNameInput, 'Nazwa nie może być pusta');
@@ -160,6 +158,7 @@ function resetForm() {
 
 function removeItem(uuid) {
     itemstorage.removeItem(uuid);
+    itemstorage.saveToLocalStorage();
     fillItems();
 }
 
@@ -175,7 +174,7 @@ function editItem(uuid) {
     $('#formProductName').attr('value', product.product_name);
     const prodprice = $('#formProductPrice');
     if(product.onSale) {
-        prodprice.attr('value', product.before_sale_price);
+        prodprice.attr('value', product.before_sale_price || '');
         $('#formProductSale').attr('value', product.product_price || '');
     } else {
         prodprice.attr('value', product.product_price);
